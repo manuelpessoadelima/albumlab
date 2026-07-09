@@ -1,0 +1,53 @@
+[22-Aug-2025 17:01:23 America/Boise] PHP Warning:  require(/home4/thecube7/public_html/albumfactory/assets/vendor/autoload.php): Failed to open stream: No such file or directory in /home4/thecube7/public_html/albumfactory/assets/contactform.php on line 5
+[22-Aug-2025 17:01:23 America/Boise] PHP Fatal error:  Uncaught Error: Failed opening required '/home4/thecube7/public_html/albumfactory/assets/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home4/thecube7/public_html/albumfactory/assets/contactform.php:5
+Stack trace:
+#0 {main}
+  thrown in /home4/thecube7/public_html/albumfactory/assets/contactform.php on line 5
+[22-Aug-2025 17:01:24 America/Boise] PHP Warning:  require(/home4/thecube7/public_html/albumfactory/assets/vendor/autoload.php): Failed to open stream: No such file or directory in /home4/thecube7/public_html/albumfactory/assets/contactform.php on line 5
+[22-Aug-2025 17:01:24 America/Boise] PHP Fatal error:  Uncaught Error: Failed opening required '/home4/thecube7/public_html/albumfactory/assets/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home4/thecube7/public_html/albumfactory/assets/contactform.php:5
+Stack trace:
+#0 {main}
+  thrown in /home4/thecube7/public_html/albumfactory/assets/contactform.php on line 5
+[22-Aug-2025 17:01:24 America/Boise] PHP Warning:  require(/home4/thecube7/public_html/albumfactory/assets/vendor/autoload.php): Failed to open stream: No such file or directory in /home4/thecube7/public_html/albumfactory/assets/contactform.php on line 5
+[22-Aug-2025 17:01:24 America/Boise] PHP Fatal error:  Uncaught Error: Failed opening required '/home4/thecube7/public_html/albumfactory/assets/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home4/thecube7/public_html/albumfactory/assets/contactform.php:5
+Stack trace:
+#0 {main}
+  thrown in /home4/thecube7/public_html/albumfactory/assets/contactform.php on line 5
+[22-Aug-2025 17:01:54 America/Boise] PHP Warning:  require(/home4/thecube7/public_html/albumfactory/assets/vendor/autoload.php): Failed to open stream: No such file or directory in /home4/thecube7/public_html/albumfactory/assets/contactform.php on line 5
+[22-Aug-2025 17:01:54 America/Boise] PHP Fatal error:  Uncaught Error: Failed opening required '/home4/thecube7/public_html/albumfactory/assets/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home4/thecube7/public_html/albumfactory/assets/contactform.php:5
+Stack trace:
+#0 {main}
+  thrown in /home4/thecube7/public_html/albumfactory/assets/contactform.php on line 5
+[22-Aug-2025 17:02:16 America/Boise] PHP Warning:  require(/home4/thecube7/public_html/albumfactory/assets/vendor/autoload.php): Failed to open stream: No such file or directory in /home4/thecube7/public_html/albumfactory/assets/contactform.php on line 5
+[22-Aug-2025 17:02:16 America/Boise] PHP Fatal error:  Uncaught Error: Failed opening required '/home4/thecube7/public_html/albumfactory/assets/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home4/thecube7/public_html/albumfactory/assets/contactform.php:5
+Stack trace:
+#0 {main}
+  thrown in /home4/thecube7/public_html/albumfactory/assets/contactform.php on line 5
+[22-Aug-2025 17:04:50 America/Boise] PHP Warning:  require(/home4/thecube7/public_html/albumfactory/assets/vendor/autoload.php): Failed to open stream: No such file or directory in /home4/thecube7/public_html/albumfactory/assets/contactform.php on line 5
+[22-Aug-2025 17:04:50 America/Boise] PHP Fatal error:  Uncaught Error: Failed opening required '/home4/thecube7/public_html/albumfactory/assets/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home4/thecube7/public_html/albumfactory/assets/contactform.php:5
+Stack trace:
+#0 {main}
+  thrown in /home4/thecube7/public_html/albumfactory/assets/contactform.php on line 5
+[22-Aug-2025 17:04:55 America/Boise] PHP Warning:  require(/home4/thecube7/public_html/albumfactory/assets/vendor/autoload.php): Failed to open stream: No such file or directory in /home4/thecube7/public_html/albumfactory/assets/contactform.php on line 5
+[22-Aug-2025 17:04:55 America/Boise] PHP Fatal error:  Uncaught Error: Failed opening required '/home4/thecube7/public_html/albumfactory/assets/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home4/thecube7/public_html/albumfactory/assets/contactform.php:5
+Stack trace:
+#0 {main}
+  thrown in /home4/thecube7/public_html/albumfactory/assets/contactform.php on line 5
+[22-Aug-2025 17:05:08 America/Boise] PHP Warning:  require(/home4/thecube7/public_html/albumfactory/assets/vendor/autoload.php): Failed to open stream: No such file or directory in /home4/thecube7/public_html/albumfactory/assets/contactform.php on line 5
+[22-Aug-2025 17:05:08 America/Boise] PHP Fatal error:  Uncaught Error: Failed opening required '/home4/thecube7/public_html/albumfactory/assets/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home4/thecube7/public_html/albumfactory/assets/contactform.php:5
+Stack trace:
+#0 {main}
+  thrown in /home4/thecube7/public_html/albumfactory/assets/contactform.php on line 5
+[22-Aug-2025 17:06:24 America/Boise] PHP Warning:  require(/home4/thecube7/public_html/albumfactory/assets/vendor/autoload.php): Failed to open stream: No such file or directory in /home4/thecube7/public_html/albumfactory/assets/contactform.php on line 5
+[22-Aug-2025 17:06:24 America/Boise] PHP Fatal error:  Uncaught Error: Failed opening required '/home4/thecube7/public_html/albumfactory/assets/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home4/thecube7/public_html/albumfactory/assets/contactform.php:5
+Stack trace:
+#0 {main}
+  thrown in /home4/thecube7/public_html/albumfactory/assets/contactform.php on line 5
+[22-Aug-2025 17:10:08 America/Boise] PHP Fatal error:  Uncaught Error: Class "PHPMailer\PHPMailer\PHPMailer" not found in /home4/thecube7/public_html/albumfactory/assets/contactform.php:17
+Stack trace:
+#0 {main}
+  thrown in /home4/thecube7/public_html/albumfactory/assets/contactform.php on line 17
+[22-Aug-2025 17:10:26 America/Boise] PHP Fatal error:  Uncaught Error: Class "PHPMailer\PHPMailer\PHPMailer" not found in /home4/thecube7/public_html/albumfactory/assets/contactform.php:17
+Stack trace:
+#0 {main}
+  thrown in /home4/thecube7/public_html/albumfactory/assets/contactform.php on line 17

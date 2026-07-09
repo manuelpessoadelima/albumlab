@@ -1,0 +1,700 @@
+/*/////////////////////
+GENERAL SETUP
+/////////////////////*/
+
+
+@font-face {
+    font-family: 'monoton';
+    src: url(/assets/fonts/Monoton-Regular.woff2);
+}
+
+@font-face {
+    font-family: 'goldman';
+    src: url(/assets/fonts/Goldman-Bold.woff2);
+    font-weight:700;
+}
+
+@font-face {
+    font-family: 'goldman';
+    src: url(/assets/fonts/Goldman-Regular.woff2);
+    font-weight:400;
+}
+
+@font-face {
+    font-family: 'montserrat' ;
+    src: url(/assets/fonts/Montserrat-Thin.woff2);
+    font-weight:100;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url(/assets/fonts/Montserrat-Light.woff2);
+    font-weight:300;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url(/assets/fonts/Montserrat-Medium.woff2);
+    font-weight:500;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url(/assets/fonts/Montserrat-Regular.woff2);
+    font-weight:400;
+}
+
+/*/////////////////////
+SETUP MOBILE
+/////////////////////*/
+
+:root{
+
+    --fs-regular:1rem;
+    --fs-website-link:0.8rem;
+    --fs-logo:4rem;
+    --fs-description:1.5rem;
+    --fs-list-bigger:1.5rem;
+    --fs-items:clamp(1.5rem, 5vw, 3rem);
+    --fs-items-smaller:clamp(1rem, 3vw, 2rem);
+    --fs-back-to-home:1em;
+    --fs-card-title:clamp(1rem, 3vw, 2rem);
+    --fs-card-item:2rem;
+    --fs-module-btn:1rem;
+    --fs-action-item:clamp(0.8rem, 1vw, 1.5rem);
+    --fs-module-item:clamp(0.8rem, 1vw, 1.5rem);
+    --fs-module-grid-item:clamp(1rem, 2vw, 1.5rem);
+    --fs-contact-btn: clamp(0.8rem, 1vw, 1.5rem);
+
+    --color-logo:rgb(78, 78, 248);
+    --color-light-shade: rgba(22, 24, 120, 0.888);
+    --color-cards:rgba(78, 78, 248);
+    --color-card-text:rgb(255, 255, 255); 
+    --color-first-item:rgba(255, 255, 255, 0.9);
+    --color-second-item:rgba(255, 255, 255, 0.9);
+    --color-third-item:rgb(255, 255, 255);
+    --color-module-btn:rgba(255, 255, 255);
+    --color-action-btn:rgba(255, 255, 255);
+    --color-module-1:rgb(152, 248, 166);
+    --color-module-2:rgb(79, 149, 255);
+    --color-module-3:rgba(255, 230, 1, 0.834);
+    --color-btn-hover:rgb(12, 243, 255);
+    --color-modal-item-text:rgb(0, 0, 0);
+
+    --color-contact-btn:white;
+
+
+    --color-random-module-1: #E63946; /* Vibrant red - anchor */
+    --color-random-module-2: #F1FAEE; /* Soft off-white */
+    --color-random-module-3: #A8DADC; /* Light aqua */
+    --color-random-module-4: #457B9D; /* Desaturated blue */
+    --color-random-module-5: #1D3557; /* Deep navy */
+    --color-random-module-6: #FFB703; /* Warm yellow-orange */
+    --color-random-module-7: #8ECAE6; /* Sky blue */
+
+
+    /* --color-logo: rgb(78, 78, 248); */
+
+    --color-month-card: rgb(78,78,248);
+    --color-month-card-text:white;
+    --color-month1:  rgba(255, 99, 71, 0.15);    /* Tomato red */
+    --color-month2:  rgba(255, 165, 0, 0.25);    /* Orange */
+    --color-month3:  rgba(255, 215, 0, 0.85);    /* Gold */
+    --color-month4:  #00c95bd9;   /* Medium sea green */
+    --color-month5:  rgba(32, 178, 170, 0.85);   /* Light sea green */
+    --color-month6:  rgba(70, 130, 180, 0.85);   /* Steel blue */
+    --color-month7:  rgba(123, 104, 238, 0.85);  /* Medium slate blue */
+    --color-month8:  rgba(186, 85, 211, 0.85);   /* Medium orchid */
+    --color-month9:  rgba(255, 105, 180, 0.85);  /* Hot pink */
+    --color-month10: rgba(205, 92, 92, 0.85);    /* Indian red */
+}
+
+body{ 
+    margin:0;
+    padding:0; 
+    font-family: "Goldman", sans-serif;
+    font-size:var(--fs-regular);
+}
+
+/*/////////////////////
+LAYOUT MOBILE
+/////////////////////*/
+
+.wrapper{
+    width:100%;
+    margin:0 auto;
+}
+
+.tagline-container{
+    width:80%;
+    margin:1em auto;
+    
+}
+
+.hero-block{
+    width:60%;
+    margin:1em auto; 
+    padding:1em;  
+}
+
+.contact-btn-container{
+    margin:1em;
+    padding:1em;
+    gap:0;
+    margin-bottom:5em;
+}
+
+.course-wrapper{
+    width:80%;
+    margin:3em auto;
+}
+
+.card-container{
+    background-color:var(--color-cards);
+    padding:2em;
+    
+    margin-bottom:4em;
+    color:var(--color-card-text);
+}
+
+.coming-soon-wrapper{
+    background-color: black;
+    width:100%;
+    max-width: 100vw; /* prevent overflow beyond viewport */
+    box-sizing: border-box;
+}
+
+.structure-grid{ 
+    display:grid;
+    padding:1em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:auto 1fr 0.25fr;
+    gap:1em;
+    justify-content: center;
+}
+
+.back-to-home-container{
+    margin:1em;
+}
+
+.sequence-card{
+    width:70%;
+    margin:4em auto;
+    padding:2em;
+    background-color: var(--color-month-card);
+}
+
+.modal-btn-container{
+    text-align: center;
+    margin:5em auto 2em;
+}
+
+.module-grid, .action-grid, .contact-btn-container{
+    display:flex;    
+    flex-wrap:wrap;
+    
+    justify-content: center;
+  
+}
+
+
+.module-grid, .action-grid{
+    margin:1em;
+    padding:1em; 
+    gap:1em;
+}
+
+
+
+.contact-container{
+    display:flex;
+    height:16em;
+    align-items: center;    
+    gap:1em;
+    margin:3em auto 1em;   
+}
+
+.contact-me{
+    height:100%;
+    width:50%;
+    display:flex;
+    align-items:end;
+}
+
+.email{
+    font-family:'montserrat';
+    font-weight:100;
+    font-size:0.8rem;
+}
+
+.profile-photo{
+    width:50%;
+    height:100%;
+    background-blend-mode: multiply;   
+}
+
+.photo-dina{
+    background-image: url(/assets/img/dina.jpeg);
+    background-position: 80% center;
+    filter: grayscale(100%);
+    background-repeat: no-repeat;
+    background-size: cover;  
+}
+
+.photo-manu{
+    background-image: url(/assets/img/manu_credit_john_viscotti.jpeg);
+    background-position: 70% center;
+    background-size: cover;  
+    filter: grayscale(100%);
+}
+
+/*/////////////////////
+TYPOGRAPHY MOBILE
+/////////////////////*/
+
+h1{
+    font-family: 'monoton';
+    font-size:var(--fs-logo);
+    font-weight:100;
+    color:var(--color-logo);
+    
+    line-height:0.85;
+    text-align:center;
+    
+    /* transform: perspective(500px) rotateX(49deg) rotateY(-22deg) ;   */
+ 
+}
+
+.tagline{
+    font-family:'monoton', sans-serif;
+    font-weight:800;
+    letter-spacing: 2px;
+    line-height: 0.2;
+    text-transform: uppercase;
+    transform:skew(-45deg);
+    color:var(--color-light-shade);
+
+}
+
+h2{
+    font-family: 'monoton', sans-serif;
+    text-transform: uppercase;
+    font-size:var(--fs-items);
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+.month-number{
+    margin:0;
+    color:var(--color-month-card-text);
+}
+
+h3{
+    text-transform: uppercase;
+    text-align: center;
+    margin:0;
+}
+
+.month-subtitle{
+    color:var(--color-card-text);
+}
+
+.month-card-item{
+    font-size:var(--fs-card-item);
+    text-align: center;
+    color:var(--color-card-text);
+}
+
+.right{
+    text-align: right;
+    transform:skew(0);
+    color:black;
+}
+
+
+.description{   
+    font-size: var(--fs-description);
+    color:var(--color-light-shade);
+    line-height: 1.4;
+}
+
+.card-description{
+    color:var(--color-card-text);
+    font-family:'montserrat';
+}
+
+
+
+.card-title{
+    text-align: center;
+    color:var(--color-card-text);
+    font-size:var(--fs-card-title);
+}
+
+ul{
+    width:50%;
+    margin:0 auto;  
+    list-style-type: none;
+    font-weight: 800;
+    font-size:var(--fs-list-bigger);
+}
+
+li{
+    margin:1em 0;
+    color:var(--color-card-text);
+}
+
+.plus{
+    text-align: left;
+    color:var(--color-card-text);
+}
+
+.structure-grid-button{ 
+    text-decoration: none;
+    text-align: center;
+    color:var(--color-card-text);
+    color:black;
+    padding: 4em 0.5em;
+}
+
+.structure-grid-button:hover{
+    background-color:var(--color-btn-hover);
+    color:white;
+    
+}
+
+.bio-space{
+    height:8em;
+}
+
+.teacher-bio{
+    font-family:'montserrat';
+    font-weight:400;
+}
+
+.contact-btn{
+   display:flex;
+    
+    text-decoration:none;
+    text-transform: uppercase;
+    padding:0.5em 1em;
+    background-color: var(--color-contact-btn);
+    font-size: var(--fs-contact-btn);
+}
+
+.contact-btn:hover{
+    background-color: var(--color-btn-hover);
+}
+
+.back-to-home{
+    text-decoration: none;
+    font-size:var(--fs-back-to-home); 
+    color: var(--color-light-shade);
+    
+    padding:0.5em;
+}
+
+.back-to-home:hover{
+    background-color:var(--color-btn-hover);
+    
+}
+
+.module-btn, .action-btn{
+    
+    text-decoration:none;
+    padding:1em 3em;
+    color:black;
+    font-size:var(--fs-module-btn);
+    font-weight:800;
+    text-transform: uppercase;  
+    border:none;
+}
+
+.module-btn{
+    background-color:var(--color-module-btn);
+}
+
+.action-btn{
+    background-color: var(--color-action-btn);
+}
+
+.module-btn:hover, .action-btn:hover{
+    color:white;
+    background-color: var(--color-btn-hover);
+   
+}
+
+.modal{
+    border:none;
+    max-width:50%;
+    background-color: rgba(12,32,33,0);
+}
+
+.modal::backdrop{
+    background:linear-gradient(45deg, rgb(0, 0, 0), rgba(190, 183, 184, 0.7));
+   
+}
+
+.close-modal-btn{
+    background-color: rgb(228, 227, 227);
+    border:none;
+    padding:1em;
+    margin:2em 0 1em;
+}
+
+.close-modal-btn:hover{
+    background-color:var(--color-btn-hover);
+
+}
+
+.modal-item{
+    font-size:var(--fs-module-item);
+    padding:3em;
+    background-color: white;
+    box-shadow: #8ECAE6;
+}
+
+.structure-grid-title{
+    grid-column-start:1;
+    grid-column-end:-1; 
+    text-wrap: wrap;
+    letter-spacing: 8px;
+    font-size:var(--fs-items-smaller);
+    color:var(--color-card-text);
+}
+
+.structure-first-item{
+    background-color: var(--color-first-item);
+}
+
+.structure-second-item{
+    background-color: var(--color-second-item);
+}
+
+.structure-third-item{
+    background-color:var(--color-third-item);
+    grid-column-start:1;
+    grid-column-end:-1;
+    padding:2em;   
+}
+
+.module-grid-item{
+    display:flex;
+    margin:0;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    height:7em;
+    width:7em;
+    padding:1em;
+    
+    font-size:var(--fs-module-grid-item);
+    background-color: white;
+}
+
+.action-grid-item{
+    display:flex;
+    padding:2em;
+    font-size:var(--fs-action-item);
+    width:20%;
+    justify-content: center;
+    align-items: center;
+  
+   
+}
+
+.action-grid-item, 
+.module-grid-item{
+    border:dashed black 4px;
+}
+
+.coming-soon{
+    font-size:var(--fs-regular);
+    color:red;
+}
+
+.albumfactory{
+    font-family: 'monoton';
+}
+
+.album-factory-pattern{
+    margin:0;
+    padding:0;
+    word-break: break-all;
+    white-space: normal;
+    overflow-wrap: break-word;
+    color:rgb(196, 240, 255);
+    letter-spacing: 6px;
+}
+
+.open-contact{
+    text-decoration: none;
+    width:7em;
+    text-align: center;
+    background-color: var(--color-logo);
+    color:white;
+    font-weight:bold;
+    padding:1em;    
+    border:none;
+    font-size:var(--fs-regular);
+    margin:0; 
+}
+
+.open-contact:hover{
+    background-color: var(--color-btn-hover);
+}
+
+.contact-form-modal{
+    border:none;
+    max-width:50%;
+}
+
+.website-link{
+    text-decoration: none;
+    color:white;
+    font-size:var(--fs-website-link);
+    
+}
+
+.website-link:hover{
+    color:var(--color-btn-hover);
+}
+
+/*/////////////////////
+CONTACT FORM MOBILE
+/////////////////////*/
+
+input, textarea, button{
+    margin:1em;
+    outline:var(--color-light-shade);
+    border:solid 2px grey;
+    box-shadow: 0 0 6px rgba(78, 78, 248, .5);
+    padding:0.5em;
+    color:var(--color-logo);
+}
+
+.submit, .close-contact{
+    background-color: white;
+}
+
+
+
+textarea{
+    resize:vertical;
+}
+
+.open-contact{
+    text-transform: uppercase;
+}
+
+.form-feedback {
+    color: green;
+    display: none;
+}
+
+/*/////////////////////
+SETUP DESKTOP
+/////////////////////*/
+
+@media (min-width:768px){
+
+    :root{
+        --fs-regular:2rem;
+        --fs-tagline-text:1rem;
+        --fs-description:1.8rem;
+        --fs-module-btn:1rem;
+        --fs-logo:8rem;    
+        --fs-website-link:1.5rem;
+    }
+
+ 
+    /*/////////////////////
+    LAYOUT DESKTOP
+    /////////////////////*/
+
+    .wrapper{
+        width:70%;
+    }
+
+    .tagline-container{
+        width: 35%;
+        font-size:var(--fs-tagline-text);
+        margin:5em auto;
+        
+     
+    }
+
+    
+    
+
+    .hero-block{
+        width:50%;
+        text-align: center;
+        margin:0 auto;
+       
+    }
+
+    .structure-grid{
+        grid-template-columns: 1fr;
+        grid-template-rows:1fr;
+        
+    }
+
+    .modal-btn-container{
+        text-align: center;
+        margin:2em auto;
+    }
+
+    .contact-btn-container{
+        margin:1em;
+        padding:1em;  
+    }
+
+    .contact-container{
+        height:8em;
+    }
+
+    .profile-photo{
+        width:30%;
+    }
+
+
+
+    /*/////////////////////
+    TYPOGRAPHY DESKTOP
+    /////////////////////*/
+
+
+    .action-grid-item{
+        font-size:1rem;
+    }
+
+    .structure-third-item, .structure-second-item, .structure-first-item{
+        padding:1em;
+        font-size:var(--fs-module-btn);
+    }
+
+    .module-btn, 
+    .action-btn{
+        font-size:var(--fs-module-btn);
+    }
+
+    .teacher-bio{
+        font-weight:100;
+    }
+
+    .description{
+        line-height: 1.5;
+    }
+
+    /*/////////////////////
+    CONTACT FORM MOBILE
+    /////////////////////*/
+
+    form{
+        display:flex;
+        flex-direction: column;
+    }
+
+
+}
