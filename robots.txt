@@ -37,4 +37,4 @@ Disallow: /
 
 # END Cloudflare Managed Content
 
-Sitemap: https://www.albumfactory.org/sitemap.xml
+Sitemap: https://albumlab.org/sitemap.xml
