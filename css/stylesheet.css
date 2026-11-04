@@ -1,0 +1,910 @@
+/*/////////////////////
+GENERAL SETUP
+/////////////////////*/
+
+
+@font-face {
+    font-family: 'monoton';
+    src: url(/assets/fonts/Monoton-Regular.woff2);
+}
+
+@font-face {
+    font-family: 'goldman';
+    src: url(/assets/fonts/Goldman-Bold.woff2);
+    font-weight:700;
+}
+
+@font-face {
+    font-family: 'goldman';
+    src: url(/assets/fonts/Goldman-Regular.woff2);
+    font-weight:400;
+}
+
+@font-face {
+    font-family: 'montserrat' ;
+    src: url(/assets/fonts/Montserrat-Thin.woff2);
+    font-weight:100;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url(/assets/fonts/Montserrat-Light.woff2);
+    font-weight:300;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url(/assets/fonts/Montserrat-Medium.woff2);
+    font-weight:500;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url(/assets/fonts/Montserrat-Regular.woff2);
+    font-weight:400;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url(/assets/fonts/Montserrat-SemiBold.woff2);
+    font-weight:600;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url(/assets/fonts/Montserrat-Bold.woff2);
+    font-weight:700;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url(/assets/fonts/Montserrat-Italic.woff2);
+    font-weight:400;
+    font-style:italic;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url(/assets/fonts/Montserrat-MediumItalic.woff2);
+    font-weight:500;
+    font-style:italic;
+}
+
+/*/////////////////////
+SETUP MOBILE
+/////////////////////*/
+
+:root{
+
+    /* layout */
+    --content-width:40rem;      /* max width of the text column */
+    --content-width-wide:70rem; /* max width for grids (modules, actions) */
+    --gutter:1.25rem;           /* side space on each side of the text on phones */
+    --band-padding:3rem;        /* vertical space inside each colored band */
+
+    --fs-regular:1rem;
+    --fs-website-link:0.8rem;
+    --fs-logo:clamp(3.5rem, 18vw, 8rem);
+    --fs-description:1.4rem;
+    --fs-list-bigger:1.5rem;
+    --fs-items:clamp(1.5rem, 5vw, 3rem);
+    --fs-items-smaller:clamp(1.25rem, 5vw, 2rem);
+    --fs-back-to-home:1em;
+    --fs-card-title:clamp(1.25rem, 5vw, 2rem);
+    --fs-card-item:2rem;
+    --fs-module-btn:1rem;
+    --fs-action-item:1rem;
+    --fs-module-item:1rem;
+    --fs-module-grid-item:clamp(1rem, 2vw, 1.5rem);
+    --fs-contact-btn:0.9rem;
+
+    --color-logo:rgb(78, 78, 248);
+    --color-light-shade: rgba(22, 24, 120, 0.888);
+    --color-text-dark: rgb(28, 30, 70);  /* dark navy for text on light bands */
+    --color-tint: rgb(240, 241, 255);    /* very pale blue background */
+    --color-cards:rgb(78, 78, 248);
+    --color-card-text:rgb(255, 255, 255);
+    --color-first-item:rgba(255, 255, 255, 0.9);
+    --color-second-item:rgba(255, 255, 255, 0.9);
+    --color-third-item:rgb(255, 255, 255);
+    --color-module-btn:rgb(255, 255, 255);
+    --color-action-btn:rgb(255, 255, 255);
+    --color-module-1:rgb(152, 248, 166);
+    --color-module-2:rgb(79, 149, 255);
+    --color-module-3:rgba(255, 230, 1, 0.834);
+    --color-btn-hover:rgb(12, 243, 255);
+    --color-modal-item-text:rgb(0, 0, 0);
+
+    --color-contact-btn:white;
+
+
+    --color-random-module-1: #E63946; /* Vibrant red - anchor */
+    --color-random-module-2: #F1FAEE; /* Soft off-white */
+    --color-random-module-3: #A8DADC; /* Light aqua */
+    --color-random-module-4: #457B9D; /* Desaturated blue */
+    --color-random-module-5: #1D3557; /* Deep navy */
+    --color-random-module-6: #FFB703; /* Warm yellow-orange */
+    --color-random-module-7: #8ECAE6; /* Sky blue */
+
+
+    --color-month-card: rgb(78,78,248);
+    --color-month-card-text:white;
+    --color-month1:  rgba(255, 99, 71, 0.15);    /* Tomato red */
+    --color-month2:  rgba(255, 165, 0, 0.25);    /* Orange */
+    --color-month3:  rgba(255, 215, 0, 0.85);    /* Gold */
+    --color-month4:  #00c95bd9;   /* Medium sea green */
+    --color-month5:  rgba(32, 178, 170, 0.85);   /* Light sea green */
+    --color-month6:  rgba(70, 130, 180, 0.85);   /* Steel blue */
+    --color-month7:  rgba(123, 104, 238, 0.85);  /* Medium slate blue */
+    --color-month8:  rgba(186, 85, 211, 0.85);   /* Medium orchid */
+    --color-month9:  rgba(255, 105, 180, 0.85);  /* Hot pink */
+    --color-month10: rgba(205, 92, 92, 0.85);    /* Indian red */
+}
+
+*, *::before, *::after{
+    box-sizing: border-box; /* padding is included in width, so nothing overflows the screen */
+}
+
+body{
+    margin:0;
+    padding:0;
+    font-family: 'montserrat', sans-serif; /* was goldman */
+    font-size:var(--fs-regular);
+    background-color: white;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/*/////////////////////
+LAYOUT MOBILE
+/////////////////////*/
+
+/*
+  BAND = a full-width horizontal strip.
+  The background color goes edge to edge; the content sits in the
+  middle grid column, which is the full width minus the gutters on a
+  phone and stops growing at --content-width on bigger screens.
+
+   | 1fr |      content column      | 1fr |
+*/
+.band{
+    display:grid;
+    grid-template-columns:
+        1fr
+        min(var(--content-width), 100% - 2 * var(--gutter))
+        1fr;
+    padding-block: var(--band-padding);
+}
+
+.band > *{
+    grid-column: 2;
+}
+
+.band > .full-bleed{
+    grid-column: 1 / -1; /* anything that should touch the screen edges */
+}
+
+.band-wide{
+    --content-width: var(--content-width-wide);
+}
+
+/* color variations: blue band (white text) and light band (blue text) */
+.band-blue{
+    background-color: var(--color-cards);
+    color: var(--color-card-text);
+}
+
+/* light bands: dark navy text for easy reading, headings keep the brand blue */
+.band-light{
+    background-color: white;
+    color: var(--color-text-dark);
+}
+
+/* pale blue tint: a calm alternative to white, so the page doesn't look striped */
+.band-tint{
+    background-color: var(--color-tint);
+    color: var(--color-text-dark);
+}
+
+.band-light h2, .band-tint h2{
+    color: var(--color-logo);
+}
+
+/* on light bands the white contact button would disappear: make it blue */
+.band-light .contact-btn, .band-tint .contact-btn{
+    background-color: var(--color-logo);
+    color: white;
+}
+
+/* ---- hero (top of the homepage) ---- */
+
+.hero{
+    text-align: center;
+    padding-block: 2rem 3rem;
+    /* fill most of the phone screen; only a strip of the next band peeks in */
+    min-height: 85vh;  /* fallback for older browsers */
+    min-height: 85svh; /* svh = height with the browser bars visible */
+    align-content: center; /* center logo + text vertically in that space */
+}
+
+/* ---- hook (first section after the hero) ---- */
+
+.hook{
+    color: black;
+    padding-top: 0; /* continues the white hero without a gap */
+}
+
+.hook h2{
+    font-family: 'montserrat', sans-serif;
+    /* font-family: Georgia, 'Times New Roman', serif;  <- try this for a softer, bookish look */
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: clamp(1.75rem, 7vw, 2.75rem);
+    line-height: 1.2;
+    font-style: italic;
+    color: black; /* keep the hook question black, not brand blue */
+}
+
+/* the answer right under the hook question */
+.hook-answer{
+    text-align: center;
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+    font-weight: 500;
+    margin: 0 0 2em;
+}
+
+/* "How it works": the two alternating weeks */
+.week{
+    margin-top: 2em;
+}
+
+.week-title{
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.week-title + .card-description{
+    margin-top: 0.5em;
+}
+
+/* "The six months": a simple vertical timeline */
+.phases{
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 1.25em;
+    border-left: 3px solid currentColor; /* the timeline line */
+}
+
+.phases li{
+    position: relative;
+    margin-bottom: 2em;
+}
+
+.phases li:last-child{
+    margin-bottom: 0;
+}
+
+.phases li::before{ /* the dot on the line */
+    content: "";
+    position: absolute;
+    left: calc(-1.25em - 9px);
+    top: 0.3em;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.phase-title{
+    text-align: left;
+    font-weight: 700;
+}
+
+.phase-time{
+    display: block;
+    font-weight: 500;
+    font-size: 0.8em;
+    opacity: 0.7;
+    margin-bottom: 0.2em;
+}
+
+.phase-title + .card-description{
+    margin-top: 0.4em;
+}
+
+/* headings written as a sentence instead of a one-word label */
+.card-title.sentence-title{ /* double class so it wins over .card-title */
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 600;
+    line-height: 1.25;
+    font-size: clamp(1.5rem, 6vw, 2.25rem);
+}
+
+/* "Your practice could be": examples shown as tags */
+.practice-list{
+    list-style: none;
+    margin: 1.5em 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+.practice-list li{
+    font-family: 'montserrat', sans-serif;
+    font-weight: 500;
+    border: 1.5px solid currentColor;
+    border-radius: 2em;
+    padding: 0.35em 0.9em;
+}
+
+.practice-list li:last-child{
+    font-style: italic;
+}
+
+/* small "applications open" line at the end of the hook */
+.apply-teaser{
+    text-align: center;
+    font-weight: 600;
+    margin-top: 2em;
+    line-height: 1.8;
+}
+
+.apply-teaser a{
+    color: var(--color-logo);
+}
+
+html{
+    scroll-behavior: smooth; /* the "apply ↓" link glides down instead of jumping */
+}
+
+.tagline-container{
+    margin:1em 0;
+    text-align: left;
+}
+
+.description{
+    margin:0;
+    font-weight:500;
+}
+
+.contact-btn-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    margin-block: 1em 3em;
+}
+
+/* ---- structure buttons: 2 columns on phone, 3rd button full width ---- */
+
+.structure-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:1em;
+    margin-top:1.5em;
+}
+
+.back-to-home-container{
+    padding: 1em var(--gutter);
+}
+
+.sequence-card{
+    width:min(70rem, 100%);
+    margin:4em auto;
+    padding:2em var(--gutter);
+    background-color: var(--color-month-card);
+}
+
+.modal-btn-container{
+    text-align: center;
+    margin:3em auto 2em;
+}
+
+.module-grid, .action-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    gap:1em;
+}
+
+/* ---- teachers ---- */
+
+.bio + .bio{
+    margin-top:4em;
+}
+
+.contact-container{
+    display:flex;
+    align-items: flex-end;  /* contact button sits at the bottom of the photo */
+    gap:1em;
+    margin:2em 0 1em;
+}
+
+.profile-photo{
+    width:50%;
+    aspect-ratio: 1;        /* square photo, no fixed height needed */
+    flex-shrink: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+}
+
+.photo-dina{
+    background-image: url(/assets/img/dina.jpeg);
+    background-position: 80% center;
+}
+
+.photo-manu{
+    background-image: url(/assets/img/manu_credit_john_viscotti.jpeg);
+    background-position: 70% center;
+}
+
+.email{
+    font-family:'montserrat';
+    font-weight:100;
+    font-size:0.8rem;
+}
+
+/*/////////////////////
+TYPOGRAPHY MOBILE
+/////////////////////*/
+
+h1{
+    font-family: 'monoton';
+    font-size:var(--fs-logo);
+    font-weight:100;
+    color:var(--color-logo);
+    line-height:0.85;
+    text-align:center;
+    margin:0.25em 0;
+    overflow-wrap: anywhere; /* never wider than the phone */
+}
+
+.tagline{
+    font-family:'montserrat', sans-serif; /* was monoton */
+    font-weight:700;
+    letter-spacing: 2px;
+    line-height: 0.2;
+    text-transform: uppercase;
+    transform:skew(-45deg);
+    color:var(--color-light-shade);
+}
+
+h2{
+    font-family: 'montserrat', sans-serif; /* was monoton */
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size:var(--fs-items);
+    text-align: center;
+    letter-spacing: 0.15em;
+}
+
+.month-number{
+    margin:0;
+    color:var(--color-month-card-text);
+}
+
+h3{
+    text-transform: uppercase;
+    text-align: center;
+    margin:0;
+}
+
+.month-subtitle{
+    color:var(--color-card-text);
+}
+
+.month-card-item{
+    font-size:var(--fs-card-item);
+    text-align: center;
+    color:var(--color-card-text);
+}
+
+.right{
+    text-align: right;
+    transform:skew(0);
+    color:black;
+}
+
+.description{
+    font-size: var(--fs-description);
+    color:var(--color-light-shade);
+    line-height: 1.4;
+}
+
+/* text inside bands inherits the band's color (white on blue, blue on white) */
+.card-description{
+    font-family:'montserrat';
+    line-height:1.5;
+}
+
+.card-title{
+    text-align: center;
+    font-size:var(--fs-card-title);
+    margin-top:0;
+}
+
+.structure-grid-title{
+    letter-spacing: 8px;
+    font-size:var(--fs-items-smaller);
+}
+
+/* "plus list": items separated by a + (Mixed Modes) */
+.plus-list{
+    margin:1em 0 0;
+    padding:0;
+    list-style-type: none;
+    font-weight: 800;
+    font-size:var(--fs-list-bigger);
+}
+
+.plus-list li{
+    margin:0;
+}
+
+.plus-list li + li::before{
+    content:"+";
+    display:block;
+    margin:0.5em 0;
+}
+
+.structure-grid-button{
+    text-decoration: none;
+    text-align: center;
+    color:black;
+    padding: 4em 0.5em;
+}
+
+.structure-grid-button:hover{
+    background-color:var(--color-btn-hover);
+    color:white;
+}
+
+.teacher-bio{
+    font-family:'montserrat';
+    font-weight:400;
+    line-height:1.5;
+}
+
+.contact-btn{
+    display:inline-flex;
+    text-decoration:none;
+    text-transform: uppercase;
+    padding:0.5em 1em;
+    color:var(--color-logo);
+    background-color: var(--color-contact-btn);
+    font-size: var(--fs-contact-btn);
+}
+
+.contact-btn:hover{
+    background-color: var(--color-btn-hover);
+}
+
+.back-to-home{
+    text-decoration: none;
+    font-size:var(--fs-back-to-home);
+    color: var(--color-light-shade);
+    padding:0.5em;
+}
+
+.back-to-home:hover{
+    background-color:var(--color-btn-hover);
+}
+
+.module-btn, .action-btn{
+    text-decoration:none;
+    padding:1em 3em;
+    color:black;
+    font-size:var(--fs-module-btn);
+    font-weight:800;
+    text-transform: uppercase;
+    border:none;
+}
+
+.module-btn{
+    background-color:var(--color-module-btn);
+}
+
+.action-btn{
+    background-color: var(--color-action-btn);
+}
+
+.module-btn:hover, .action-btn:hover{
+    color:white;
+    background-color: var(--color-btn-hover);
+}
+
+.modal{
+    border:none;
+    width:min(90vw, 40rem);
+    max-width:none;
+    padding:0;
+    background-color: rgba(12,32,33,0);
+}
+
+.modal::backdrop{
+    background:linear-gradient(45deg, rgb(0, 0, 0), rgba(190, 183, 184, 0.7));
+}
+
+.close-modal-btn{
+    background-color: rgb(228, 227, 227);
+    border:none;
+    padding:1em;
+    margin:2em 0 1em;
+}
+
+.close-modal-btn:hover{
+    background-color:var(--color-btn-hover);
+}
+
+.modal-item{
+    font-size:var(--fs-module-item);
+    padding:1.5em;
+    background-color: white;
+}
+
+.structure-first-item{
+    background-color: var(--color-first-item);
+}
+
+.structure-second-item{
+    background-color: var(--color-second-item);
+}
+
+.structure-third-item{
+    background-color:var(--color-third-item);
+    grid-column: 1 / -1;
+    padding:2em;
+}
+
+.module-grid-item{
+    display:flex;
+    margin:0;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    width:9em;
+    height:9em;
+    padding:1em;
+    font-size:var(--fs-module-grid-item);
+    background-color: white;
+}
+
+.action-grid-item{
+    display:flex;
+    margin:0;
+    padding:1.5em;
+    font-size:var(--fs-action-item);
+    flex: 1 1 14rem;  /* grows to fill the row, wraps below ~14rem */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.action-grid-item,
+.module-grid-item{
+    border:dashed black 4px;
+}
+
+.coming-soon{
+    font-size:var(--fs-regular);
+    color:red;
+}
+
+.albumfactory{
+    font-family: 'monoton';
+}
+
+.album-factory-pattern{
+    margin:0;
+    padding:0;
+    word-break: break-all;
+    white-space: normal;
+    overflow-wrap: break-word;
+    color:rgb(196, 240, 255);
+    letter-spacing: 6px;
+}
+
+.open-contact{
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: var(--color-logo);
+    color:white;
+    font-weight:bold;
+    padding:1em;
+    border:none;
+    font-size:var(--fs-regular);
+    margin:0;
+}
+
+.open-contact:hover{
+    background-color: var(--color-btn-hover);
+}
+
+.contact-form-modal{
+    border:none;
+    width:min(90vw, 40rem);
+    max-width:none;
+}
+
+.website-link{
+    text-decoration: none;
+    color:inherit;
+    font-size:var(--fs-website-link);
+}
+
+.website-link:hover{
+    color:var(--color-btn-hover);
+}
+
+/*/////////////////////
+CONTACT FORM MOBILE
+/////////////////////*/
+
+form{
+    display:flex;
+    flex-direction: column;
+}
+
+input, textarea, button{
+    margin:0.5em 0;
+    outline-color:var(--color-light-shade);
+    border:solid 2px grey;
+    box-shadow: 0 0 6px rgba(78, 78, 248, .5);
+    padding:0.5em;
+    color:var(--color-logo);
+    font: inherit;
+}
+
+.submit, .close-contact{
+    background-color: white;
+}
+
+textarea{
+    resize:vertical;
+}
+
+.form-feedback {
+    color: green;
+    display: none;
+}
+
+/* "What happens next": three numbered steps before the e-mail button */
+.next-steps-title{
+    margin-top: 2em;
+    font-weight: 700;
+}
+
+.next-steps{
+    font-family: 'montserrat', sans-serif;
+    line-height: 1.5;
+    margin: 1em 0 0;
+    padding-left: 1.4em;
+}
+
+.next-steps li{
+    margin-bottom: 0.9em;
+    padding-left: 0.3em;
+}
+
+.next-steps li::marker{
+    font-weight: 700;
+}
+
+.next-steps-note{
+    font-style: italic;
+    opacity: 0.85;
+}
+
+/* "let's have a coffee": e-mail button + address to copy, on the blue band */
+.write-to-us{
+    margin-top: 2em;
+    text-align: center;
+}
+
+.write-btn{
+    display: inline-block;
+    padding: 0.9em 1.6em;
+    background-color: white;
+    color: var(--color-text-dark);
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid white;
+}
+
+.write-btn:hover{
+    background-color: transparent;
+    color: white;
+}
+
+.email-line{
+    margin-top: 1.25em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6em;
+}
+
+.email-address{
+    font-weight: 500;
+    user-select: all; /* one tap selects the whole address */
+}
+
+.copy-email{
+    margin: 0;
+    padding: 0.25em 0.8em;
+    border: 1.5px solid white;
+    box-shadow: none;
+    background: transparent;
+    color: white;
+    font-size: 0.85em;
+    cursor: pointer;
+}
+
+/*/////////////////////
+SETUP DESKTOP
+/////////////////////*/
+
+@media (min-width:768px){
+
+    :root{
+        --fs-regular:1.25rem;
+        --fs-tagline-text:1rem;
+        --fs-description:1.8rem;
+        --fs-website-link:1.25rem;
+        --band-padding:5rem;
+    }
+
+
+    /*/////////////////////
+    LAYOUT DESKTOP
+    /////////////////////*/
+
+    .tagline-container{
+        width: 60%;
+        font-size:var(--fs-tagline-text);
+        margin:3em auto;
+    }
+
+    /* the three structure buttons side by side */
+    .structure-grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .structure-third-item{
+        grid-column: auto;
+    }
+
+    .structure-third-item, .structure-second-item, .structure-first-item{
+        padding:3em 1em;
+        font-size:var(--fs-module-btn);
+    }
+
+    .profile-photo{
+        width:30%;
+    }
+
+    .modal-item{
+        padding:3em;
+    }
+
+
+    /*/////////////////////
+    TYPOGRAPHY DESKTOP
+    /////////////////////*/
+
+    .teacher-bio{
+        font-weight:300;
+    }
+
+    .description{
+        line-height: 1.5;
+    }
+}

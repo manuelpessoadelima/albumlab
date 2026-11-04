@@ -1,12 +1,22 @@
 console.log("JS file is connected and running!");
 
+// "copy" button next to the e-mail address
+document.querySelectorAll('.copy-email').forEach(btn => {
+  btn.addEventListener('click', () => {
+    navigator.clipboard.writeText(btn.dataset.email).then(() => {
+      btn.textContent = 'copied!';
+      setTimeout(() => { btn.textContent = 'copy'; }, 2000);
+    });
+  });
+});
+
 // Handle Form Submission
 
 // Stop the form to reload success blank page
 const contactForm = document.querySelector('.contact-form');
-   
 
-contactForm.addEventListener('submit', function(event) {
+// only run if the form exists on this page (otherwise the whole script stops here)
+if (contactForm) contactForm.addEventListener('submit', function(event) {
     event.preventDefault(); // THIS stops the default submission
     console.log("Form submission prevented!");
 
@@ -33,14 +43,21 @@ contactForm.addEventListener('submit', function(event) {
     console.log("PHP responded:", data); // see what PHP says
     // show a success message in your HTML
     const feedback = document.querySelector('.form-feedback');
-    feedback.textContent = "Thanks for getting in touch! We will get back to you soon.";
     feedback.style.display = 'block';
 
-    // optionally, clear the form
-    contactForm.reset();
+    // contactform.php answers "Success" only when the e-mail really went out
+    if (data.trim() === "Success") {
+        feedback.textContent = "Thanks for getting in touch! We will get back to you soon.";
+        contactForm.reset();
+    } else {
+        feedback.textContent = "Sorry, your message could not be sent. Please write to contact@albumlab.org";
+    }
     })
     .catch(error => {
         console.error('Damm something is not working, sorry', error);
+        const feedback = document.querySelector('.form-feedback');
+        feedback.textContent = "Sorry, your message could not be sent. Please write to contact@albumlab.org";
+        feedback.style.display = 'block';
     });
 
 });
@@ -87,11 +104,13 @@ const modal = document.querySelector('.contact-form-modal');
 const openModal = document.querySelector('.open-contact');
 const closeModal = document.querySelector('.close-contact');
 
-openModal.addEventListener("click", ()=> {
-  modal.showModal();
-});
-closeModal.addEventListener("click", ()=> {
-  modal.close();
-});
+if (modal && openModal && closeModal) {
+  openModal.addEventListener("click", ()=> {
+    modal.showModal();
+  });
+  closeModal.addEventListener("click", ()=> {
+    modal.close();
+  });
+}
 
 
