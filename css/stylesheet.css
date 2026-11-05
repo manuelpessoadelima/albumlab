@@ -797,9 +797,27 @@ textarea{
     font-weight: 700;
 }
 
-.next-steps-note{
-    font-style: italic;
-    opacity: 0.85;
+/* make it obvious that the first steps cost nothing */
+.free-note{
+    font-family: 'montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.15em;
+    line-height: 1.4;
+    margin: 0.5em 0 1em;
+}
+
+.free-tag{
+    display: inline-block;
+    font-size: 0.75em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.1em 0.6em;
+    margin: 0 0.3em;
+    border-radius: 1em;
+    background-color: white;
+    color: var(--color-logo);
+    vertical-align: 0.1em;
 }
 
 /* "let's have a coffee": e-mail button + address to copy, on the blue band */
@@ -906,5 +924,96 @@ SETUP DESKTOP
 
     .description{
         line-height: 1.5;
+    }
+}
+
+
+/*/////////////////////
+WIDE SCREENS (laptops and desktops)
+On a phone everything stays in one column. On wide screens the
+content sections ("split") get two columns: the heading on the left,
+the text on the right. The text column keeps a comfortable reading
+width; the extra space goes to the heading column instead of making
+lines too long.
+/////////////////////*/
+
+@media (min-width:1000px){
+
+    .band.split{
+        grid-template-columns:
+            1fr
+            minmax(0, 22rem)   /* heading column */
+            minmax(0, 42rem)   /* text column */
+            1fr;
+    }
+
+    .band.split > *{
+        grid-column: 3;
+    }
+
+    .band.split > h2{
+        grid-column: 2;
+        grid-row: 1 / span 60;  /* stays next to all the content of the section */
+        align-self: start;
+        position: sticky;       /* heading stays in view while the text scrolls */
+        top: 2rem;
+        text-align: left;
+        margin: 0;
+        padding-right: 3rem;
+        font-size: clamp(1.5rem, 2.2vw, 2rem); /* long words like TEACHERS fit the column */
+    }
+
+    .band.split > :nth-child(2){
+        margin-top: 0;          /* text starts level with the heading */
+    }
+
+    /* hook and "we are looking for 4 people" stay centered, a bit wider */
+    .hook, #apply{
+        --content-width: 46rem;
+    }
+
+    /* subheadings inside the text column line up with the text */
+    .band.split h3{
+        text-align: left;
+    }
+
+    /* the slogan was tiny on big screens */
+    .tagline-container{
+        font-size: 1.6rem;
+        width: min(36rem, 70%);
+    }
+
+    /* teachers: photo + contact on the left, name and bio on the right */
+    .band.split .bio{
+        display: grid;
+        grid-template-columns: 11rem 1fr;
+        column-gap: 2rem;
+        align-items: start;
+        margin-top: 3rem;
+    }
+
+    .band.split .bio > *{
+        grid-column: 2;
+    }
+
+    .band.split .bio .contact-container{
+        grid-column: 1;
+        grid-row: 1 / span 4;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+    }
+
+    .band.split .bio .profile-photo{
+        width: 100%;
+    }
+
+    .band.split .bio .teacher-name{
+        margin-top: 0;
+    }
+
+    /* timeline: a bit more air between phases */
+    .phases li{
+        margin-bottom: 2.5em;
     }
 }
