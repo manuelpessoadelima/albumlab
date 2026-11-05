@@ -775,6 +775,25 @@ textarea{
     display: none;
 }
 
+/* small, discreet footer with the address */
+.site-footer{
+    padding: 2.5rem var(--gutter) 3rem;
+    text-align: center;
+    font-family: 'montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    color: var(--color-text-dark);
+    opacity: 0.6;
+}
+
+.site-footer p{
+    margin: 0.3em 0;
+}
+
+.site-footer a{
+    color: inherit;
+}
+
 /* "What happens next": three numbered steps before the e-mail button */
 .next-steps-title{
     margin-top: 2em;
