@@ -77,20 +77,29 @@ SETUP MOBILE
 :root{
 
     /* layout */
+    --font-sans: 'montserrat', sans-serif;
     --content-width:40rem;      /* max width of the text column */
     --content-width-wide:70rem; /* max width for grids (modules, actions) */
     --gutter:1.25rem;           /* side space on each side of the text on phones */
     --band-padding:3rem;        /* vertical space inside each colored band */
 
-    --fs-regular:1rem;
-    --fs-website-link:0.8rem;
-    --fs-logo:clamp(3.5rem, 18vw, 8rem);
+    /* ---- type scale (one size per role; desktop values in the @media blocks) ----
+       lead   = the main sentence in the header
+       h2     = section titles
+       h3     = sub-headings (Week A, phases, teacher names)
+       body   = running text
+       small  = labels, footer, e-mail          */
+    --fs-lead:1.5rem;
+    --fs-h2:1.375rem;
+    --fs-h3:1.125rem;
+    --fs-regular:1rem;  /* body */
+    --fs-small:0.875rem;
+    --fs-logo:clamp(3.5rem, 20vw, 11rem);
     --fs-description:1.4rem;
     --fs-list-bigger:1.5rem;
     --fs-items:clamp(1.5rem, 5vw, 3rem);
     --fs-items-smaller:clamp(1.25rem, 5vw, 2rem);
     --fs-back-to-home:1em;
-    --fs-card-title:clamp(1.25rem, 5vw, 2rem);
     --fs-card-item:2rem;
     --fs-module-btn:1rem;
     --fs-action-item:1rem;
@@ -101,7 +110,7 @@ SETUP MOBILE
     --color-logo:rgb(78, 78, 248);
     --color-light-shade: rgba(22, 24, 120, 0.888);
     --color-text-dark: rgb(28, 30, 70);  /* dark navy for text on light bands */
-    --color-tint: rgb(240, 241, 255);    /* very pale blue background */
+    --color-tint: rgb(247, 241, 230);    /* warm cream background (was pale blue 240,241,255) */
     --color-cards:rgb(78, 78, 248);
     --color-card-text:rgb(255, 255, 255);
     --color-first-item:rgba(255, 255, 255, 0.9);
@@ -148,7 +157,7 @@ SETUP MOBILE
 body{
     margin:0;
     padding:0;
-    font-family: 'montserrat', sans-serif; /* was goldman */
+    font-family: var(--font-sans);
     font-size:var(--fs-regular);
     background-color: white;
 }
@@ -215,6 +224,7 @@ LAYOUT MOBILE
 
 /* on light bands the white contact button would disappear: make it blue */
 .band-light .contact-btn, .band-tint .contact-btn{
+    font-family: var(--font-sans);
     background-color: var(--color-logo);
     color: white;
 }
@@ -225,8 +235,8 @@ LAYOUT MOBILE
     text-align: center;
     padding-block: 2rem 3rem;
     /* fill most of the phone screen; only a strip of the next band peeks in */
-    min-height: 85vh;  /* fallback for older browsers */
-    min-height: 85svh; /* svh = height with the browser bars visible */
+    min-height: 75vh;  /* fallback for older browsers */
+    min-height: 75svh; /* svh = height with the browser bars visible */
     align-content: center; /* center logo + text vertically in that space */
 }
 
@@ -238,7 +248,7 @@ LAYOUT MOBILE
 }
 
 .hook h2{
-    font-family: 'montserrat', sans-serif;
+    font-family: var(--font-sans);
     /* font-family: Georgia, 'Times New Roman', serif;  <- try this for a softer, bookish look */
     font-weight: 500;
     text-transform: none;
@@ -264,7 +274,6 @@ LAYOUT MOBILE
 
 .week-title{
     font-weight: 700;
-    letter-spacing: 0.05em;
 }
 
 .week-title + .card-description{
@@ -275,7 +284,7 @@ LAYOUT MOBILE
 .phases{
     list-style: none;
     margin: 0;
-    padding: 0 0 0 1.25em;
+    padding: 0 0 0 2em;
     border-left: 3px solid currentColor; /* the timeline line */
 }
 
@@ -288,15 +297,19 @@ LAYOUT MOBILE
     margin-bottom: 0;
 }
 
-.phases li::before{ /* the dot on the line */
-    content: "";
+.phase-icon{ /* little drawing sitting on the timeline line */
     position: absolute;
-    left: calc(-1.25em - 9px);
-    top: 0.3em;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: currentColor;
+    left: calc(-2em - 21.5px);
+    top: 0;
+    width: 40px;
+    height: 40px;
+    padding: 4px 0;
+    background: white;      /* hides the line behind the icon */
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .phase-title{
@@ -305,6 +318,7 @@ LAYOUT MOBILE
 }
 
 .phase-time{
+    font-family: var(--font-sans);
     display: block;
     font-weight: 500;
     font-size: 0.8em;
@@ -314,15 +328,6 @@ LAYOUT MOBILE
 
 .phase-title + .card-description{
     margin-top: 0.4em;
-}
-
-/* headings written as a sentence instead of a one-word label */
-.card-title.sentence-title{ /* double class so it wins over .card-title */
-    text-transform: none;
-    letter-spacing: normal;
-    font-weight: 600;
-    line-height: 1.25;
-    font-size: clamp(1.5rem, 6vw, 2.25rem);
 }
 
 /* "Your practice could be": examples shown as tags */
@@ -336,11 +341,12 @@ LAYOUT MOBILE
 }
 
 .practice-list li{
-    font-family: 'montserrat', sans-serif;
+    font-family: var(--font-sans);
     font-weight: 500;
     border: 1.5px solid currentColor;
     border-radius: 2em;
     padding: 0.35em 0.9em;
+    font-size: 0.9em;
 }
 
 .practice-list li:last-child{
@@ -349,6 +355,7 @@ LAYOUT MOBILE
 
 /* small "applications open" line at the end of the hook */
 .apply-teaser{
+    font-family: var(--font-sans);
     text-align: center;
     font-weight: 600;
     margin-top: 2em;
@@ -364,8 +371,26 @@ html{
 }
 
 .tagline-container{
-    margin:1em 0;
+    margin:0.25em 0 0;
     text-align: left;
+}
+
+.hero-label{
+    font-family: var(--font-sans);
+    margin: 0.5em 0 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: var(--fs-small);
+    color: var(--color-light-shade);
+}
+
+.hero-text{
+    font-family: var(--font-sans);
+    font-size: var(--fs-lead);
+    line-height: 1.35;
+    max-width: 32rem;
+    margin: 2rem auto 0;
 }
 
 .description{
@@ -445,9 +470,9 @@ html{
 }
 
 .email{
-    font-family:'montserrat';
+    font-family: var(--font-sans);
     font-weight:100;
-    font-size:0.8rem;
+    font-size:var(--fs-small);
 }
 
 /*/////////////////////
@@ -466,7 +491,7 @@ h1{
 }
 
 .tagline{
-    font-family:'montserrat', sans-serif; /* was monoton */
+    font-family: var(--font-sans);
     font-weight:700;
     letter-spacing: 2px;
     line-height: 0.2;
@@ -476,7 +501,7 @@ h1{
 }
 
 h2{
-    font-family: 'montserrat', sans-serif; /* was monoton */
+    font-family: var(--font-sans);
     font-weight: 700;
     text-transform: uppercase;
     font-size:var(--fs-items);
@@ -490,8 +515,10 @@ h2{
 }
 
 h3{
-    text-transform: uppercase;
+    text-transform: none;
     text-align: center;
+    font-size: var(--fs-h3);
+    line-height: 1.3;
     margin:0;
 }
 
@@ -519,13 +546,17 @@ h3{
 
 /* text inside bands inherits the band's color (white on blue, blue on white) */
 .card-description{
-    font-family:'montserrat';
+    font-family: var(--font-sans);
     line-height:1.5;
 }
 
 .card-title{
     text-align: center;
-    font-size:var(--fs-card-title);
+    font-size:var(--fs-h2);
+    font-weight: 600;
+    line-height: 1.25;
+    text-transform: none;   /* all section titles are written as sentences */
+    letter-spacing: normal;
     margin-top:0;
 }
 
@@ -566,7 +597,7 @@ h3{
 }
 
 .teacher-bio{
-    font-family:'montserrat';
+    font-family: var(--font-sans);
     font-weight:400;
     line-height:1.5;
 }
@@ -734,9 +765,10 @@ h3{
 }
 
 .website-link{
+    font-family: var(--font-sans);
     text-decoration: none;
     color:inherit;
-    font-size:var(--fs-website-link);
+    font-size:var(--fs-small);
 }
 
 .website-link:hover{
@@ -777,10 +809,10 @@ textarea{
 
 /* small, discreet footer with the address */
 .site-footer{
+    font-family: var(--font-sans);
     padding: 2.5rem var(--gutter) 3rem;
     text-align: center;
-    font-family: 'montserrat', sans-serif;
-    font-size: 0.8rem;
+    font-size: var(--fs-small);
     letter-spacing: 0.03em;
     color: var(--color-text-dark);
     opacity: 0.6;
@@ -801,7 +833,7 @@ textarea{
 }
 
 .next-steps{
-    font-family: 'montserrat', sans-serif;
+    font-family: var(--font-sans);
     line-height: 1.5;
     margin: 1em 0 0;
     padding-left: 1.4em;
@@ -818,7 +850,7 @@ textarea{
 
 /* make it obvious that the first steps cost nothing */
 .free-note{
-    font-family: 'montserrat', sans-serif;
+    font-family: var(--font-sans);
     font-weight: 600;
     font-size: 1.15em;
     line-height: 1.4;
@@ -826,6 +858,7 @@ textarea{
 }
 
 .free-tag{
+    font-family: var(--font-sans);
     display: inline-block;
     font-size: 0.75em;
     font-weight: 700;
@@ -846,6 +879,7 @@ textarea{
 }
 
 .write-btn{
+    font-family: var(--font-sans);
     display: inline-block;
     padding: 0.9em 1.6em;
     background-color: white;
@@ -870,11 +904,13 @@ textarea{
 }
 
 .email-address{
+    font-family: var(--font-sans);
     font-weight: 500;
     user-select: all; /* one tap selects the whole address */
 }
 
 .copy-email{
+    font-family: var(--font-sans);
     margin: 0;
     padding: 0.25em 0.8em;
     border: 1.5px solid white;
@@ -892,10 +928,13 @@ SETUP DESKTOP
 @media (min-width:768px){
 
     :root{
-        --fs-regular:1.25rem;
+        --fs-lead:2rem;
+        --fs-h2:1.625rem;
+        --fs-h3:1.25rem;
+        --fs-regular:1.125rem;
+        --fs-small:1rem;
         --fs-tagline-text:1rem;
         --fs-description:1.8rem;
-        --fs-website-link:1.25rem;
         --band-padding:5rem;
     }
 
@@ -907,7 +946,7 @@ SETUP DESKTOP
     .tagline-container{
         width: 60%;
         font-size:var(--fs-tagline-text);
-        margin:3em auto;
+        margin:0.5em auto 0;
     }
 
     /* the three structure buttons side by side */
@@ -979,14 +1018,13 @@ lines too long.
         text-align: left;
         margin: 0;
         padding-right: 3rem;
-        font-size: clamp(1.5rem, 2.2vw, 2rem); /* long words like TEACHERS fit the column */
     }
 
     .band.split > :nth-child(2){
         margin-top: 0;          /* text starts level with the heading */
     }
 
-    /* hook and "we are looking for 4 people" stay centered, a bit wider */
+    /* hook and "we are looking for 6 people" stay centered, a bit wider */
     .hook, #apply{
         --content-width: 46rem;
     }
