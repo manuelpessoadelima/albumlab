@@ -343,7 +343,8 @@ LAYOUT MOBILE
 .practice-list li{
     font-family: var(--font-sans);
     font-weight: 500;
-    border: 1.5px solid currentColor;
+    border: 1px solid color-mix(in srgb, currentColor 40%, transparent); /* thin and soft */
+    color: color-mix(in srgb, currentColor 85%, transparent);
     border-radius: 2em;
     padding: 0.35em 0.9em;
     font-size: 0.9em;
@@ -351,6 +352,11 @@ LAYOUT MOBILE
 
 .practice-list li:last-child{
     font-style: italic;
+    background: white;                 /* filled, so the open invitation stands out */
+    color: inherit;                    /* full-strength text, not the softer tone */
+    border: 1.5px solid currentColor;
+    font-size: 1em;                    /* a touch bigger than the other tags (0.9em) */
+    padding: 0.4em 1.1em;
 }
 
 /* small "applications open" line at the end of the hook */
@@ -467,6 +473,16 @@ html{
 .photo-manu{
     background-image: url(/assets/img/manu_credit_john_viscotti.jpeg);
     background-position: 70% center;
+}
+
+/* small role label above a name, same look as .phase-time */
+.teacher-role{
+    font-family: var(--font-sans);
+    display: block;
+    font-weight: 500;
+    font-size: 0.6em;
+    opacity: 0.7;
+    margin-bottom: 0.2em;
 }
 
 .email{
