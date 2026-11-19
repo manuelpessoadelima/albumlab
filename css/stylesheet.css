@@ -94,7 +94,7 @@ SETUP MOBILE
     --fs-h3:1.125rem;
     --fs-regular:1rem;  /* body */
     --fs-small:0.875rem;
-    --fs-logo:clamp(3.5rem, 20vw, 11rem);
+    --fs-logo:clamp(3rem, 15vw, 9rem); /* "ALBUM" must fit on one line */
     --fs-description:1.4rem;
     --fs-list-bigger:1.5rem;
     --fs-items:clamp(1.5rem, 5vw, 3rem);
@@ -364,7 +364,7 @@ LAYOUT MOBILE
     font-family: var(--font-sans);
     text-align: center;
     font-weight: 600;
-    margin-top: 2em;
+    margin-top: 4em;
     line-height: 1.8;
 }
 
@@ -389,6 +389,15 @@ html{
     letter-spacing: 3px;
     font-size: var(--fs-small);
     color: var(--color-light-shade);
+}
+
+.hero-tagline{
+    font-family: var(--font-sans);
+    margin: 0.5em 0 0;
+    font-weight: 600;
+    font-style: italic;
+    font-size: var(--fs-lead);
+    color: var(--color-logo);
 }
 
 .hero-text{
@@ -503,7 +512,8 @@ h1{
     line-height:0.85;
     text-align:center;
     margin:0.25em 0;
-    overflow-wrap: anywhere; /* never wider than the phone */
+    overflow-wrap: normal; /* never break inside a word: ALBUM stays whole */
+    word-break: keep-all;
 }
 
 .tagline{
